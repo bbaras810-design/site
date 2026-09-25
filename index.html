@@ -37,7 +37,27 @@ h1{font-size:clamp(68px,8.1vw,122px);line-height:.87;letter-spacing:-.07em;font-
 .select-panel.show{display:block}.select-panel .selected-country{font-size:13px}.select-panel .selected-meta{font-size:10px;color:#777;margin-top:4px}.select-panel button{margin-top:10px;border:0;border-radius:16px;background:#fff;color:#000;padding:7px 12px;font-size:9px;text-transform:uppercase;cursor:pointer}
 
 .info{padding:100px 0 120px}.info h2{font-size:52px;font-weight:400;letter-spacing:-.055em;margin:0 0 12px}.info p{color:#777;max-width:620px;line-height:1.6;font-weight:200}
-footer{border-top:1px solid #111;padding:28px 0 45px;color:#666;font-size:11px;display:flex;justify-content:space-between}footer b{color:#fff;font-weight:400}
+
+/* ============ NEW FOOTER ============ */
+footer{border-top:1px solid #111;padding:38px 0 30px;color:#666;font-size:11px}
+.footer-main{display:grid;grid-template-columns:1fr 1.2fr 1fr;gap:36px;align-items:start;margin-bottom:26px}
+.footer-brand b{display:block;color:#fff;font-size:14px;font-weight:400;margin-bottom:5px}
+.footer-brand span{color:#555;font-size:10px;text-transform:uppercase;letter-spacing:.08em}
+.footer-requisites{display:grid;gap:8px}
+.footer-row{display:flex;justify-content:space-between;gap:14px;align-items:baseline;font-size:11px;padding-bottom:6px;border-bottom:1px solid #0f0f0f}
+.footer-row span{color:#555;text-transform:uppercase;letter-spacing:.08em;font-size:9px}
+.footer-row b{color:#d6d6d6;font-weight:400;text-align:right}
+.footer-row b a{color:#d6d6d6;border-bottom:1px solid #2a2a2a}
+.footer-row b a:hover{color:#fff;border-color:var(--violet)}
+.footer-links{display:flex;flex-direction:column;gap:8px;align-items:flex-end}
+.footer-links a{color:#888;font-size:11px;text-decoration:underline;text-underline-offset:3px}
+.footer-links a:hover{color:#fff}
+.footer-bottom{display:flex;justify-content:space-between;border-top:1px solid #111;padding-top:18px;font-size:10px;color:#444;text-transform:uppercase;letter-spacing:.08em}
+@media(max-width:900px){
+  .footer-main{grid-template-columns:1fr;gap:22px}
+  .footer-links{align-items:flex-start}
+  .footer-bottom{flex-direction:column;gap:8px}
+}
 
 @media(max-width:900px){
  .wrap{width:min(100% - 34px,1420px)}header{height:68px}.hero{grid-template-columns:1fr;padding-top:90px}.hero-copy{padding-top:25px}.example-wrap{height:560px;margin-top:-20px}.example-globe{width:min(86vw,570px)}.example-caption{bottom:20px;right:50%;transform:translateX(50%);white-space:nowrap}
@@ -165,17 +185,12 @@ footer{border-top:1px solid #111;padding:28px 0 45px;color:#666;font-size:11px;d
 .co-buy:hover{background:#9369ff}
 .co-note{margin-top:12px;text-align:center;font-size:9px;color:#555;text-transform:uppercase;letter-spacing:.1em}
 
-/* ============ PAYMENT PAGE ============ */
 .payment{position:fixed;inset:0;z-index:320;background:radial-gradient(circle at 78% 10%,rgba(128,82,255,.18),transparent 46%),radial-gradient(circle at 10% 94%,rgba(255,184,41,.06),transparent 42%),#000;opacity:0;visibility:hidden;pointer-events:none;transform:translateY(20px);transition:opacity .5s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1),visibility .5s;overflow-y:auto;-webkit-overflow-scrolling:touch}
 .payment.open{opacity:1;visibility:visible;pointer-events:auto;transform:none}
 .pay-head{height:78px;display:flex;align-items:center;justify-content:space-between;width:min(1420px,calc(100% - 52px));margin:auto}
 .pay-body{width:min(1000px,calc(100% - 52px));margin:auto;padding:20px 0 90px}
 
-.pay-summary{
-  border:1px solid #1a1a1a;border-radius:24px;padding:22px 24px;
-  background:linear-gradient(180deg,rgba(128,82,255,.08),transparent 55%),#040404;
-  margin-bottom:36px;display:flex;align-items:center;gap:22px;flex-wrap:wrap;
-}
+.pay-summary{border:1px solid #1a1a1a;border-radius:24px;padding:22px 24px;background:linear-gradient(180deg,rgba(128,82,255,.08),transparent 55%),#040404;margin-bottom:36px;display:flex;align-items:center;gap:22px;flex-wrap:wrap}
 .pay-summary.featured{border-color:rgba(255,184,41,.45);background:linear-gradient(180deg,rgba(255,184,41,.08),transparent 55%),#040404}
 .pay-flag{font-size:48px;line-height:1}
 .pay-sum-info{flex:1;min-width:220px}
@@ -183,76 +198,32 @@ footer{border-top:1px solid #111;padding:28px 0 45px;color:#666;font-size:11px;d
 .pay-sum-num{font-size:13px;color:#9a9a9a;font-variant-numeric:tabular-nums}
 .pay-sum-price{font-size:36px;letter-spacing:-.03em;font-weight:500}
 
-.pay-section-title{
-  font-size:10px;color:#666;text-transform:uppercase;letter-spacing:.14em;
-  margin:0 0 14px;padding-left:2px;
-}
+.pay-section-title{font-size:10px;color:#666;text-transform:uppercase;letter-spacing:.14em;margin:0 0 14px;padding-left:2px}
 .pay-section-title.with-line{display:flex;align-items:center;gap:14px}
 .pay-section-title.with-line::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,#1a1a1a,transparent)}
 
 .pay-grid{display:grid;gap:12px;margin-bottom:36px}
+.pay-method{display:flex;align-items:center;gap:16px;border:1px solid rgba(255,255,255,.09);border-radius:16px;background:rgba(4,3,9,.7);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);padding:14px 16px;transition:border-color .3s ease,transform .25s ease,box-shadow .35s ease,background .3s ease}
+.pay-method:hover{transform:translateY(-2px);border-color:rgba(128,82,255,.4);box-shadow:0 14px 36px rgba(0,0,0,.5),0 0 24px rgba(128,82,255,.14)}
+.pay-method.stars:hover{border-color:rgba(255,184,41,.5);box-shadow:0 14px 36px rgba(0,0,0,.5),0 0 24px rgba(255,184,41,.18)}
 
-.pay-method{
-  display:flex;align-items:center;gap:16px;
-  border:1px solid rgba(255,255,255,.09);border-radius:16px;
-  background:rgba(4,3,9,.7);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
-  padding:14px 16px;
-  transition:border-color .3s ease,transform .25s ease,box-shadow .35s ease,background .3s ease;
-}
-.pay-method:hover{
-  transform:translateY(-2px);
-  border-color:rgba(128,82,255,.4);
-  box-shadow:0 14px 36px rgba(0,0,0,.5),0 0 24px rgba(128,82,255,.14);
-}
-.pay-method.stars:hover{
-  border-color:rgba(255,184,41,.5);
-  box-shadow:0 14px 36px rgba(0,0,0,.5),0 0 24px rgba(255,184,41,.18);
-}
-
-/* ===== hexagon icons (SVG-based) ===== */
-.pm-icon{
-  width:52px;height:52px;flex-shrink:0;
-  display:grid;place-items:center;
-  filter:drop-shadow(0 6px 14px rgba(0,0,0,.55));
-  transition:transform .25s ease,filter .25s ease;
-}
-.pay-method:hover .pm-icon{
-  transform:translateY(-1px) scale(1.05);
-  filter:drop-shadow(0 8px 20px rgba(0,0,0,.65));
-}
+.pm-icon{width:52px;height:52px;flex-shrink:0;display:grid;place-items:center;filter:drop-shadow(0 6px 14px rgba(0,0,0,.55));transition:transform .25s ease,filter .25s ease}
+.pay-method:hover .pm-icon{transform:translateY(-1px) scale(1.05);filter:drop-shadow(0 8px 20px rgba(0,0,0,.65))}
 .pm-icon svg{width:100%;height:100%;display:block;overflow:visible}
 
 .pm-info{flex:1;min-width:0}
 .pm-name{font-size:13px;font-weight:500;margin-bottom:5px}
 .pm-name small{color:#888;font-weight:400;margin-left:6px;font-size:11px}
-.pm-amount{
-  font-size:12.5px;color:#eaeaea;font-weight:500;
-  font-variant-numeric:tabular-nums;margin-bottom:5px;
-  letter-spacing:-.01em;
-}
+.pm-amount{font-size:12.5px;color:#eaeaea;font-weight:500;font-variant-numeric:tabular-nums;margin-bottom:5px;letter-spacing:-.01em}
 .pm-amount span{color:#8d8d8d;font-weight:400;font-size:11px;margin-left:5px;letter-spacing:.04em}
-.pm-addr{
-  font-size:11px;color:#a0a0a0;
-  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
-  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
-  letter-spacing:-.01em;
-}
-.pm-copy{
-  border:1px solid #2a2a2a;background:rgba(0,0,0,.5);color:#bbb;
-  border-radius:11px;padding:9px 14px;font-size:9px;
-  text-transform:uppercase;letter-spacing:.1em;cursor:pointer;
-  transition:.2s;flex-shrink:0;font-family:inherit;
-}
+.pm-addr{font-size:11px;color:#a0a0a0;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;letter-spacing:-.01em}
+.pm-copy{border:1px solid #2a2a2a;background:rgba(0,0,0,.5);color:#bbb;border-radius:11px;padding:9px 14px;font-size:9px;text-transform:uppercase;letter-spacing:.1em;cursor:pointer;transition:.2s;flex-shrink:0;font-family:inherit}
 .pm-copy:hover{color:#fff;border-color:#555;background:rgba(255,255,255,.04)}
 .pm-copy.copied{color:#9dffca;border-color:rgba(157,255,202,.4);background:rgba(20,60,40,.3)}
 .pm-copy.stars{color:#ffd98a;border-color:rgba(255,184,41,.4)}
 .pm-copy.stars:hover{color:#fff;border-color:rgba(255,184,41,.8);background:rgba(255,184,41,.1)}
 
-.pay-hint{
-  text-align:center;color:#666;font-size:11px;
-  text-transform:uppercase;letter-spacing:.1em;line-height:1.7;
-  margin-top:10px;
-}
+.pay-hint{text-align:center;color:#666;font-size:11px;text-transform:uppercase;letter-spacing:.1em;line-height:1.7;margin-top:10px}
 .pay-hint b{color:#aaa;font-weight:500}
 
 @media(max-width:900px){
@@ -272,7 +243,6 @@ footer{border-top:1px solid #111;padding:28px 0 45px;color:#666;font-size:11px;d
   .pm-copy{padding:8px 10px;font-size:8px}
   .pay-method{padding:12px 12px;gap:12px}
 }
-
 @media(max-width:900px){
   .co-body{grid-template-columns:1fr;gap:34px;padding-top:6px}
   .co-head{height:68px}
@@ -374,7 +344,30 @@ footer{border-top:1px solid #111;padding:28px 0 45px;color:#666;font-size:11px;d
   <p data-i18n="info_text">Rotate the globe to bring a country into view. Points represent available inventory. When a country reaches the visible side, its compact number card appears beside it.</p>
 </section>
 
-<footer class="wrap"><b>numbers.exe</b><span data-i18n="footer_credit">developed by exec.me</span></footer>
+<footer class="wrap">
+  <div class="footer-main">
+    <div class="footer-brand">
+      <b>numbers.exe</b>
+      <span>developed by exec.me</span>
+    </div>
+    <div class="footer-requisites">
+      <div class="footer-row"><span>Исполнитель</span><b>Шмидт Кирилл Евгеньевич</b></div>
+      <div class="footer-row"><span>Статус</span><b>Самозанятый (НПД)</b></div>
+      <div class="footer-row"><span>ИНН</span><b>480212624482</b></div>
+      <div class="footer-row"><span>Email</span><b><a href="mailto:bbaras810@atomicmail.io">bbaras810@atomicmail.io</a></b></div>
+      <div class="footer-row"><span>Telegram</span><b><a href="https://t.me/exec_me_shop" target="_blank" rel="noopener">@exec_me_shop</a></b></div>
+    </div>
+    <div class="footer-links">
+      <a href="oferta.html">Публичная оферта</a>
+      <a href="privacy.html">Политика конфиденциальности</a>
+      <a href="mailto:bbaras810@atomicmail.io">Связаться с нами</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 numbers.exe · все права защищены</span>
+    <span>оплата обрабатывается через ЮKassa</span>
+  </div>
+</footer>
 
 <section class="checkout" id="checkout" aria-hidden="true">
   <div class="co-head">
@@ -406,7 +399,6 @@ footer{border-top:1px solid #111;padding:28px 0 45px;color:#666;font-size:11px;d
   </div>
 </section>
 
-<!-- ============ PAYMENT PAGE ============ -->
 <section class="payment" id="payment" aria-hidden="true">
   <div class="pay-head">
     <a class="logo" href="#"><span class="logo-mark"></span>numbers.exe</a>
@@ -425,16 +417,10 @@ footer{border-top:1px solid #111;padding:28px 0 45px;color:#666;font-size:11px;d
     <div class="pay-section-title with-line" data-i18n="pay_crypto">cryptocurrency</div>
     <div class="pay-grid" id="payCryptoGrid">
 
-      <!-- BTC -->
       <div class="pay-method" data-method="btc">
         <div class="pm-icon">
           <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="icoBtcG" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" stop-color="#f9a13a"/>
-                <stop offset="1" stop-color="#d97706"/>
-              </linearGradient>
-            </defs>
+            <defs><linearGradient id="icoBtcG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f9a13a"/><stop offset="1" stop-color="#d97706"/></linearGradient></defs>
             <path d="M50 2 L95 27 L95 73 L50 98 L5 73 L5 27 Z" fill="url(#icoBtcG)"/>
             <path d="M50 2 L95 27 L95 73 L50 98 L5 73 L5 27 Z" fill="none" stroke="rgba(255,255,255,.18)" stroke-width="1.2"/>
             <text x="50" y="68" text-anchor="middle" fill="#fff" font-family="Inter,Arial,sans-serif" font-size="50" font-weight="900">₿</text>
@@ -448,24 +434,13 @@ footer{border-top:1px solid #111;padding:28px 0 45px;color:#666;font-size:11px;d
         <button class="pm-copy" type="button" data-copy="bc1qsxw3hsht6qkcc9y2jyj02pc0vwmn9fk7hrv2hj" data-i18n="pay_copy">copy</button>
       </div>
 
-      <!-- ETH -->
       <div class="pay-method" data-method="eth">
         <div class="pm-icon">
           <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="icoEthG" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" stop-color="#7a92ec"/>
-                <stop offset="1" stop-color="#3b56b8"/>
-              </linearGradient>
-            </defs>
+            <defs><linearGradient id="icoEthG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7a92ec"/><stop offset="1" stop-color="#3b56b8"/></linearGradient></defs>
             <path d="M50 2 L95 27 L95 73 L50 98 L5 73 L5 27 Z" fill="url(#icoEthG)"/>
             <path d="M50 2 L95 27 L95 73 L50 98 L5 73 L5 27 Z" fill="none" stroke="rgba(255,255,255,.18)" stroke-width="1.2"/>
-            <g transform="translate(50 50)">
-              <path d="M0 -24 L15 6 L0 15 L-15 6 Z" fill="#fff"/>
-              <path d="M0 -24 L15 6 L0 15 Z" fill="#c7d1f7"/>
-              <path d="M0 20 L15 9 L0 30 L-15 9 Z" fill="#fff"/>
-              <path d="M0 20 L15 9 L0 30 Z" fill="#c7d1f7"/>
-            </g>
+            <g transform="translate(50 50)"><path d="M0 -24 L15 6 L0 15 L-15 6 Z" fill="#fff"/><path d="M0 -24 L15 6 L0 15 Z" fill="#c7d1f7"/><path d="M0 20 L15 9 L0 30 L-15 9 Z" fill="#fff"/><path d="M0 20 L15 9 L0 30 Z" fill="#c7d1f7"/></g>
           </svg>
         </div>
         <div class="pm-info">
@@ -476,22 +451,13 @@ footer{border-top:1px solid #111;padding:28px 0 45px;color:#666;font-size:11px;d
         <button class="pm-copy" type="button" data-copy="0x51ae3A2F9994541aFfe59c6633f10033683Bc821" data-i18n="pay_copy">copy</button>
       </div>
 
-      <!-- USDT -->
       <div class="pay-method" data-method="usdt">
         <div class="pm-icon">
           <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="icoUsdtG" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" stop-color="#2fbf92"/>
-                <stop offset="1" stop-color="#178a63"/>
-              </linearGradient>
-            </defs>
+            <defs><linearGradient id="icoUsdtG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2fbf92"/><stop offset="1" stop-color="#178a63"/></linearGradient></defs>
             <path d="M50 2 L95 27 L95 73 L50 98 L5 73 L5 27 Z" fill="url(#icoUsdtG)"/>
             <path d="M50 2 L95 27 L95 73 L50 98 L5 73 L5 27 Z" fill="none" stroke="rgba(255,255,255,.18)" stroke-width="1.2"/>
-            <g fill="#fff">
-              <rect x="30" y="30" width="40" height="7" rx="1.2"/>
-              <rect x="46.5" y="30" width="7" height="40" rx="1.2"/>
-            </g>
+            <g fill="#fff"><rect x="30" y="30" width="40" height="7" rx="1.2"/><rect x="46.5" y="30" width="7" height="40" rx="1.2"/></g>
             <ellipse cx="50" cy="48" rx="20" ry="7" fill="none" stroke="#fff" stroke-width="3.2"/>
           </svg>
         </div>
@@ -503,22 +469,13 @@ footer{border-top:1px solid #111;padding:28px 0 45px;color:#666;font-size:11px;d
         <button class="pm-copy" type="button" data-copy="0x51ae3A2F9994541aFfe59c6633f10033683Bc821" data-i18n="pay_copy">copy</button>
       </div>
 
-      <!-- TON -->
       <div class="pay-method" data-method="ton">
         <div class="pm-icon">
           <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="icoTonG" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" stop-color="#29a9f2"/>
-                <stop offset="1" stop-color="#0072b1"/>
-              </linearGradient>
-            </defs>
+            <defs><linearGradient id="icoTonG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#29a9f2"/><stop offset="1" stop-color="#0072b1"/></linearGradient></defs>
             <path d="M50 2 L95 27 L95 73 L50 98 L5 73 L5 27 Z" fill="url(#icoTonG)"/>
             <path d="M50 2 L95 27 L95 73 L50 98 L5 73 L5 27 Z" fill="none" stroke="rgba(255,255,255,.18)" stroke-width="1.2"/>
-            <g transform="translate(50 50)" fill="none" stroke="#fff" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round">
-              <path d="M-21 -12 L21 -12 L0 21 Z"/>
-              <path d="M0 -12 L0 21"/>
-            </g>
+            <g transform="translate(50 50)" fill="none" stroke="#fff" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round"><path d="M-21 -12 L21 -12 L0 21 Z"/><path d="M0 -12 L0 21"/></g>
           </svg>
         </div>
         <div class="pm-info">
@@ -529,24 +486,13 @@ footer{border-top:1px solid #111;padding:28px 0 45px;color:#666;font-size:11px;d
         <button class="pm-copy" type="button" data-copy="UQBNf8mEguPXzdLBO01JBfVdASSkmsU6Ckv6RMKE33uKtQMw" data-i18n="pay_copy">copy</button>
       </div>
 
-      <!-- TRON -->
       <div class="pay-method" data-method="trx">
         <div class="pm-icon">
           <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="icoTrxG" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" stop-color="#ff2244"/>
-                <stop offset="1" stop-color="#b40020"/>
-              </linearGradient>
-            </defs>
+            <defs><linearGradient id="icoTrxG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff2244"/><stop offset="1" stop-color="#b40020"/></linearGradient></defs>
             <path d="M50 2 L95 27 L95 73 L50 98 L5 73 L5 27 Z" fill="url(#icoTrxG)"/>
             <path d="M50 2 L95 27 L95 73 L50 98 L5 73 L5 27 Z" fill="none" stroke="rgba(255,255,255,.18)" stroke-width="1.2"/>
-            <g transform="translate(50 50)" fill="none" stroke="#fff" stroke-width="3.4" stroke-linejoin="round" stroke-linecap="round">
-              <path d="M-22 -14 L22 -14 L-10 24 Z"/>
-              <path d="M-22 -14 L0 -1"/>
-              <path d="M22 -14 L0 -1"/>
-              <path d="M0 -1 L-10 24"/>
-            </g>
+            <g transform="translate(50 50)" fill="none" stroke="#fff" stroke-width="3.4" stroke-linejoin="round" stroke-linecap="round"><path d="M-22 -14 L22 -14 L-10 24 Z"/><path d="M-22 -14 L0 -1"/><path d="M22 -14 L0 -1"/><path d="M0 -1 L-10 24"/></g>
           </svg>
         </div>
         <div class="pm-info">
@@ -563,12 +509,7 @@ footer{border-top:1px solid #111;padding:28px 0 45px;color:#666;font-size:11px;d
       <div class="pay-method stars" data-method="stars">
         <div class="pm-icon">
           <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="icoStarsG" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" stop-color="#ffc83d"/>
-                <stop offset="1" stop-color="#ff8a00"/>
-              </linearGradient>
-            </defs>
+            <defs><linearGradient id="icoStarsG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffc83d"/><stop offset="1" stop-color="#ff8a00"/></linearGradient></defs>
             <path d="M50 2 L95 27 L95 73 L50 98 L5 73 L5 27 Z" fill="url(#icoStarsG)"/>
             <path d="M50 2 L95 27 L95 73 L50 98 L5 73 L5 27 Z" fill="none" stroke="rgba(255,255,255,.28)" stroke-width="1.2"/>
             <path d="M50 22 L57.5 43 L79 43 L61.5 56 L68 76.5 L50 64 L32 76.5 L38.5 56 L21 43 L42.5 43 Z" fill="#fff"/>
@@ -655,122 +596,10 @@ var countryNames = {
 };
 
 var I18N = {
-  en:{
-    nav_catalog:"catalog", nav_all:"all countries", nav_how:"how it works", nav_browse:"browse",
-    kicker:"global telegram numbers / exec.me",
-    lead:"Global Telegram numbers, organized by country. Explore the world below and choose a number.",
-    cta:"Explore numbers", hint:"scroll down · choose a country", caption:"preview · auto rotating",
-    section_title:"Choose your number.", section_sub:"drag · wheel / pinch to zoom · click a country",
-    hud_live:"live globe", status_view:"countries in view", status_loaded:"countries loaded",
-    select_view:"View number",
-    catalog_kicker:"full inventory · 51 countries", catalog_title:"All countries.",
-    catalog_ph:"Search country or code…",
-    filter_all:"all", filter_americas:"americas", filter_europe:"europe",
-    filter_asia:"asia", filter_africa:"africa", filter_oceania:"oceania",
-    info_title:"Built around the world.",
-    info_text:"Rotate the globe to bring a country into view. Points represent available inventory. When a country reaches the visible side, its compact number card appears beside it.",
-    footer_credit:"developed by exec.me",
-    co_back:"← back to globe", co_kicker:"telegram number · instant delivery",
-    co_text:"This number is ready for Telegram activation. After checkout you receive the number and the SMS code inside your dashboard — usually within a few minutes.",
-    co_step1:"Pay & receive the number instantly",
-    co_step2:"Enter the code on Telegram",
-    co_step3:"The account stays yours to keep",
-    co_country:"country", co_code:"code", co_issuance:"issuance", co_warranty:"warranty",
-    co_issuance_val:"~5 minutes", co_warranty_val:"24 hours",
-    co_buy:"Buy this number", co_note:"secure checkout · crypto / stars",
-    price_from:"from", available:"available", go_to:"go to number →",
-    empty:"no countries match your search",
-    pay_back:"← back to number", pay_crypto:"cryptocurrency", pay_stars:"telegram stars",
-    pay_copy:"copy", pay_open:"open", pay_copied:"copied ✓",
-    pay_hint:"after payment send the tx hash to <b>@exec_me_shop</b>"
-  },
-  ru:{
-    nav_catalog:"каталог", nav_all:"все страны", nav_how:"как это работает", nav_browse:"выбрать",
-    kicker:"мировые номера telegram / exec.me",
-    lead:"Мировые номера Telegram по странам. Изучите мир ниже и выберите номер.",
-    cta:"Смотреть номера", hint:"прокрутите вниз · выберите страну", caption:"превью · автоповорот",
-    section_title:"Выберите номер.", section_sub:"тяните · колесо / щипок для зума · клик по стране",
-    hud_live:"живой глобус", status_view:"стран видно", status_loaded:"стран загружено",
-    select_view:"Посмотреть номер",
-    catalog_kicker:"полный каталог · 51 страна", catalog_title:"Все страны.",
-    catalog_ph:"Поиск страны или кода…",
-    filter_all:"все", filter_americas:"америка", filter_europe:"европа",
-    filter_asia:"азия", filter_africa:"африка", filter_oceania:"океания",
-    info_title:"Собрано по всему миру.",
-    info_text:"Вращайте глобус, чтобы приблизить страну. Точки — это доступные номера. Когда страна на видимой стороне, рядом с ней появляется компактная карточка.",
-    footer_credit:"разработано exec.me",
-    co_back:"← назад к глобусу", co_kicker:"номер telegram · моментальная доставка",
-    co_text:"Этот номер готов к активации в Telegram. После оплаты вы получите номер и SMS-код в личном кабинете — обычно в течение нескольких минут.",
-    co_step1:"Оплатите и сразу получите номер",
-    co_step2:"Введите код в Telegram",
-    co_step3:"Аккаунт остаётся вашим навсегда",
-    co_country:"страна", co_code:"код", co_issuance:"выдача", co_warranty:"гарантия",
-    co_issuance_val:"~5 минут", co_warranty_val:"24 часа",
-    co_buy:"Купить номер", co_note:"безопасная оплата · крипто / звёзды",
-    price_from:"от", available:"доступно", go_to:"перейти к номеру →",
-    empty:"ничего не найдено",
-    pay_back:"← назад к номеру", pay_crypto:"криптовалюта", pay_stars:"telegram звёзды",
-    pay_copy:"копировать", pay_open:"открыть", pay_copied:"скопировано ✓",
-    pay_hint:"после оплаты отправьте tx hash в <b>@exec_me_shop</b>"
-  },
-  uk:{
-    nav_catalog:"каталог", nav_all:"усі країни", nav_how:"як це працює", nav_browse:"обрати",
-    kicker:"світові номери telegram / exec.me",
-    lead:"Світові номери Telegram за країнами. Дослідіть світ нижче та оберіть номер.",
-    cta:"Дивитись номери", hint:"прокрутіть вниз · оберіть країну", caption:"прев'ю · автоповорот",
-    section_title:"Оберіть номер.", section_sub:"тягніть · колесо / щипок для зуму · клік по країні",
-    hud_live:"живий глобус", status_view:"країн видно", status_loaded:"країн завантажено",
-    select_view:"Переглянути номер",
-    catalog_kicker:"повний каталог · 51 країна", catalog_title:"Усі країни.",
-    catalog_ph:"Пошук країни чи коду…",
-    filter_all:"усі", filter_americas:"америка", filter_europe:"європа",
-    filter_asia:"азія", filter_africa:"африка", filter_oceania:"океанія",
-    info_title:"Зібрано по всьому світу.",
-    info_text:"Обертайте глобус, щоб наблизити країну. Точки — це доступні номери. Коли країна на видимій стороні, поруч з'являється компактна картка.",
-    footer_credit:"розроблено exec.me",
-    co_back:"← назад до глобуса", co_kicker:"номер telegram · миттєва доставка",
-    co_text:"Цей номер готовий до активації в Telegram. Після оплати ви отримаєте номер і SMS-код в особистому кабінеті — зазвичай протягом кількох хвилин.",
-    co_step1:"Сплатіть і одразу отримайте номер",
-    co_step2:"Введіть код у Telegram",
-    co_step3:"Акаунт залишається вашим назавжди",
-    co_country:"країна", co_code:"код", co_issuance:"видача", co_warranty:"гарантія",
-    co_issuance_val:"~5 хвилин", co_warranty_val:"24 години",
-    co_buy:"Купити номер", co_note:"безпечна оплата · крипто / зірки",
-    price_from:"від", available:"доступно", go_to:"перейти до номера →",
-    empty:"нічого не знайдено",
-    pay_back:"← назад до номера", pay_crypto:"криптовалюта", pay_stars:"telegram зірки",
-    pay_copy:"копіювати", pay_open:"відкрити", pay_copied:"скопійовано ✓",
-    pay_hint:"після оплати надішліть tx hash у <b>@exec_me_shop</b>"
-  },
-  kz:{
-    nav_catalog:"каталог", nav_all:"барлық елдер", nav_how:"қалай жұмыс істейді", nav_browse:"таңдау",
-    kicker:"әлемдік telegram нөмірлері / exec.me",
-    lead:"Әлемдік Telegram нөмірлері елдер бойынша. Төмендегі әлемді зерттеп, нөмір таңдаңыз.",
-    cta:"Нөмірлерді көру", hint:"төмен жылжытыңыз · ел таңдаңыз", caption:"алдын ала қарау · автоайналу",
-    section_title:"Нөміріңізді таңдаңыз.", section_sub:"сүйреңіз · дөңгелек / қысу арқылы масштаб · елге басыңыз",
-    hud_live:"тікелей глобус", status_view:"ел көрінеді", status_loaded:"ел жүктелді",
-    select_view:"Нөмірді көру",
-    catalog_kicker:"толық каталог · 51 ел", catalog_title:"Барлық елдер.",
-    catalog_ph:"Ел немесе код іздеу…",
-    filter_all:"барлығы", filter_americas:"америка", filter_europe:"еуропа",
-    filter_asia:"азия", filter_africa:"африка", filter_oceania:"океания",
-    info_title:"Бүкіл әлем бойынша жиналған.",
-    info_text:"Елді жақындату үшін глобусты айналдырыңыз. Нүктелер — қолжетімді нөмірлер. Ел көрінетін жаққа келгенде, қасында шағын карта пайда болады.",
-    footer_credit:"exec.me әзірлеген",
-    co_back:"← глобусқа оралу", co_kicker:"telegram нөмірі · лезде жеткізу",
-    co_text:"Бұл нөмір Telegram-да белсендіруге дайын. Төлемнен кейін нөмір мен SMS-кодты жеке кабинетте аласыз — әдетте бірнеше минут ішінде.",
-    co_step1:"Төлеңіз және нөмірді бірден алыңыз",
-    co_step2:"Кодты Telegram-ға енгізіңіз",
-    co_step3:"Аккаунт мәңгі сіздікі болып қалады",
-    co_country:"ел", co_code:"код", co_issuance:"берілу", co_warranty:"кепілдік",
-    co_issuance_val:"~5 минут", co_warranty_val:"24 сағат",
-    co_buy:"Нөмірді сатып алу", co_note:"қауіпсіз төлем · крипто / жұлдыздар",
-    price_from:"бастап", available:"қолжетімді", go_to:"нөмірге өту →",
-    empty:"ештеңе табылмады",
-    pay_back:"← нөмірге оралу", pay_crypto:"криптовалюта", pay_stars:"telegram жұлдыздары",
-    pay_copy:"көшіру", pay_open:"ашу", pay_copied:"көшірілді ✓",
-    pay_hint:"төлемнен кейін tx hash-ты <b>@exec_me_shop</b> жіберіңіз"
-  }
+  en:{nav_catalog:"catalog",nav_all:"all countries",nav_how:"how it works",nav_browse:"browse",kicker:"global telegram numbers / exec.me",lead:"Global Telegram numbers, organized by country. Explore the world below and choose a number.",cta:"Explore numbers",hint:"scroll down · choose a country",caption:"preview · auto rotating",section_title:"Choose your number.",section_sub:"drag · wheel / pinch to zoom · click a country",hud_live:"live globe",status_view:"countries in view",status_loaded:"countries loaded",select_view:"View number",catalog_kicker:"full inventory · 51 countries",catalog_title:"All countries.",catalog_ph:"Search country or code…",filter_all:"all",filter_americas:"americas",filter_europe:"europe",filter_asia:"asia",filter_africa:"africa",filter_oceania:"oceania",info_title:"Built around the world.",info_text:"Rotate the globe to bring a country into view. Points represent available inventory. When a country reaches the visible side, its compact number card appears beside it.",footer_credit:"developed by exec.me",co_back:"← back to globe",co_kicker:"telegram number · instant delivery",co_text:"This number is ready for Telegram activation. After checkout you receive the number and the SMS code inside your dashboard.",co_step1:"Pay & receive the number instantly",co_step2:"Enter the code on Telegram",co_step3:"The account stays yours to keep",co_country:"country",co_code:"code",co_issuance:"issuance",co_warranty:"warranty",co_issuance_val:"~5 minutes",co_warranty_val:"24 hours",co_buy:"Buy this number",co_note:"secure checkout · crypto / stars",price_from:"from",available:"available",go_to:"go to number →",empty:"no countries match your search",pay_back:"← back to number",pay_crypto:"cryptocurrency",pay_stars:"telegram stars",pay_copy:"copy",pay_open:"open",pay_copied:"copied ✓",pay_hint:"after payment send the tx hash to <b>@exec_me_shop</b>"},
+  ru:{nav_catalog:"каталог",nav_all:"все страны",nav_how:"как это работает",nav_browse:"выбрать",kicker:"мировые номера telegram / exec.me",lead:"Мировые номера Telegram по странам. Изучите мир ниже и выберите номер.",cta:"Смотреть номера",hint:"прокрутите вниз · выберите страну",caption:"превью · автоповорот",section_title:"Выберите номер.",section_sub:"тяните · колесо / щипок для зума · клик по стране",hud_live:"живой глобус",status_view:"стран видно",status_loaded:"стран загружено",select_view:"Посмотреть номер",catalog_kicker:"полный каталог · 51 страна",catalog_title:"Все страны.",catalog_ph:"Поиск страны или кода…",filter_all:"все",filter_americas:"америка",filter_europe:"европа",filter_asia:"азия",filter_africa:"африка",filter_oceania:"океания",info_title:"Собрано по всему миру.",info_text:"Вращайте глобус, чтобы приблизить страну. Точки — это доступные номера. Когда страна на видимой стороне, рядом с ней появляется компактная карточка.",footer_credit:"разработано exec.me",co_back:"← назад к глобусу",co_kicker:"номер telegram · моментальная доставка",co_text:"Этот номер готов к активации в Telegram. После оплаты вы получите номер и SMS-код в личном кабинете.",co_step1:"Оплатите и сразу получите номер",co_step2:"Введите код в Telegram",co_step3:"Аккаунт остаётся вашим навсегда",co_country:"страна",co_code:"код",co_issuance:"выдача",co_warranty:"гарантия",co_issuance_val:"~5 минут",co_warranty_val:"24 часа",co_buy:"Купить номер",co_note:"безопасная оплата · крипто / звёзды",price_from:"от",available:"доступно",go_to:"перейти к номеру →",empty:"ничего не найдено",pay_back:"← назад к номеру",pay_crypto:"криптовалюта",pay_stars:"telegram звёзды",pay_copy:"копировать",pay_open:"открыть",pay_copied:"скопировано ✓",pay_hint:"после оплаты отправьте tx hash в <b>@exec_me_shop</b>"},
+  uk:{nav_catalog:"каталог",nav_all:"усі країни",nav_how:"як це працює",nav_browse:"обрати",kicker:"світові номери telegram / exec.me",lead:"Світові номери Telegram за країнами. Дослідіть світ нижче та оберіть номер.",cta:"Дивитись номери",hint:"прокрутіть вниз · оберіть країну",caption:"прев'ю · автоповорот",section_title:"Оберіть номер.",section_sub:"тягніть · колесо / щипок для зуму · клік по країні",hud_live:"живий глобус",status_view:"країн видно",status_loaded:"країн завантажено",select_view:"Переглянути номер",catalog_kicker:"повний каталог · 51 країна",catalog_title:"Усі країни.",catalog_ph:"Пошук країни чи коду…",filter_all:"усі",filter_americas:"америка",filter_europe:"європа",filter_asia:"азія",filter_africa:"африка",filter_oceania:"океанія",info_title:"Зібрано по всьому світу.",info_text:"Обертайте глобус, щоб наблизити країну. Точки — це доступні номери. Коли країна на видимій стороні, поруч з'являється компактна картка.",footer_credit:"розроблено exec.me",co_back:"← назад до глобуса",co_kicker:"номер telegram · миттєва доставка",co_text:"Цей номер готовий до активації в Telegram. Після оплати ви отримаєте номер і SMS-код в особистому кабінеті.",co_step1:"Сплатіть і одразу отримайте номер",co_step2:"Введіть код у Telegram",co_step3:"Акаунт залишається вашим назавжди",co_country:"країна",co_code:"код",co_issuance:"видача",co_warranty:"гарантія",co_issuance_val:"~5 хвилин",co_warranty_val:"24 години",co_buy:"Купити номер",co_note:"безпечна оплата · крипто / зірки",price_from:"від",available:"доступно",go_to:"перейти до номера →",empty:"нічого не знайдено",pay_back:"← назад до номера",pay_crypto:"криптовалюта",pay_stars:"telegram зірки",pay_copy:"копіювати",pay_open:"відкрити",pay_copied:"скопійовано ✓",pay_hint:"після оплати надішліть tx hash у <b>@exec_me_shop</b>"},
+  kz:{nav_catalog:"каталог",nav_all:"барлық елдер",nav_how:"қалай жұмыс істейді",nav_browse:"таңдау",kicker:"әлемдік telegram нөмірлері / exec.me",lead:"Әлемдік Telegram нөмірлері елдер бойынша. Төмендегі әлемді зерттеп, нөмір таңдаңыз.",cta:"Нөмірлерді көру",hint:"төмен жылжытыңыз · ел таңдаңыз",caption:"алдын ала қарау · автоайналу",section_title:"Нөміріңізді таңдаңыз.",section_sub:"сүйреңіз · дөңгелек / қысу арқылы масштаб · елге басыңыз",hud_live:"тікелей глобус",status_view:"ел көрінеді",status_loaded:"ел жүктелді",select_view:"Нөмірді көру",catalog_kicker:"толық каталог · 51 ел",catalog_title:"Барлық елдер.",catalog_ph:"Ел немесе код іздеу…",filter_all:"барлығы",filter_americas:"америка",filter_europe:"еуропа",filter_asia:"азия",filter_africa:"африка",filter_oceania:"океания",info_title:"Бүкіл әлем бойынша жиналған.",info_text:"Елді жақындату үшін глобусты айналдырыңыз. Нүктелер — қолжетімді нөмірлер. Ел көрінетін жаққа келгенде, қасында шағын карта пайда болады.",footer_credit:"exec.me әзірлеген",co_back:"← глобусқа оралу",co_kicker:"telegram нөмірі · лезде жеткізу",co_text:"Бұл нөмір Telegram-да белсендіруге дайын. Төлемнен кейін нөмір мен SMS-кодты жеке кабинетте аласыз.",co_step1:"Төлеңіз және нөмірді бірден алыңыз",co_step2:"Кодты Telegram-ға енгізіңіз",co_step3:"Аккаунт мәңгі сіздікі болып қалады",co_country:"ел",co_code:"код",co_issuance:"берілу",co_warranty:"кепілдік",co_issuance_val:"~5 минут",co_warranty_val:"24 сағат",co_buy:"Нөмірді сатып алу",co_note:"қауіпсіз төлем · крипто / жұлдыздар",price_from:"бастап",available:"қолжетімді",go_to:"нөмірге өту →",empty:"ештеңе табылмады",pay_back:"← нөмірге оралу",pay_crypto:"криптовалюта",pay_stars:"telegram жұлдыздары",pay_copy:"көшіру",pay_open:"ашу",pay_copied:"көшірілді ✓",pay_hint:"төлемнен кейін tx hash-ты <b>@exec_me_shop</b> жіберіңіз"}
 };
 
 var LANGS = ["en","ru","uk","kz"];
@@ -781,19 +610,8 @@ function t(key){ var d = I18N[currentLang] || I18N.en; return d[key] || I18N.en[
 function cname(i){ var arr = countryNames[currentLang] || countryNames.en; return arr[i] || countryNames.en[i] || ""; }
 function priceOf(i){ return countries[i][5] + " ₽"; }
 
-/* =========================================================
-   КУРСЫ И РАСЧЁТ КРИПТЫ
-   ========================================================= */
-var USD_RUB = 90;                   // курс доллара к рублю
-
-var CRYPTO_RATES_USD = {
-  btc:  83532,     // $ за 1 BTC
-  eth:  2649.38,   // $ за 1 ETH
-  usdt: 1,         // $ за 1 USDT
-  ton:  1.78,      // $ за 1 TON
-  trx:  0.3395     // $ за 1 TRX
-};
-
+var USD_RUB = 90;
+var CRYPTO_RATES_USD = { btc:83532, eth:2649.38, usdt:1, ton:1.78, trx:0.3395 };
 var CRYPTO_DECIMALS = { btc:8, eth:6, usdt:2, ton:2, trx:2 };
 
 function formatCryptoAmount(value, code){
@@ -806,7 +624,6 @@ function updatePaymentAmounts(){
   if(checkoutIndex < 0) return;
   var rub = countries[checkoutIndex][5];
   var usd = rub / USD_RUB;
-
   var nodes = document.querySelectorAll(".pm-amount");
   for(var i=0;i<nodes.length;i++){
     var el = nodes[i];
@@ -815,12 +632,10 @@ function updatePaymentAmounts(){
     var rate = CRYPTO_RATES_USD[code];
     if(!rate) continue;
     var amount = usd / rate;
-
     el.innerHTML = "≈ " + formatCryptoAmount(amount, code) + " <span>" + code.toUpperCase() + "</span>";
   }
 }
 
-/* звёзды: 1.7 ₽ / ⭐, округление вверх до 50 */
 var STAR_RATE = 1.7;
 function starsFor(i){
   var rub = countries[i][5];
@@ -843,31 +658,24 @@ var REGIONS = {
 
 function applyI18n(){
   document.documentElement.setAttribute("lang", currentLang);
-
   var nodes = document.querySelectorAll("[data-i18n]");
   for(var i=0;i<nodes.length;i++){
     var el = nodes[i];
     var key = el.getAttribute("data-i18n");
-    if(key === "pay_hint"){
-      el.innerHTML = t(key);
-    } else {
-      el.textContent = t(key);
-    }
+    if(key === "pay_hint"){ el.innerHTML = t(key); }
+    else { el.textContent = t(key); }
   }
   var phNodes = document.querySelectorAll("[data-i18n-ph]");
   for(var j=0;j<phNodes.length;j++){
     var pel = phNodes[j];
     pel.setAttribute("placeholder", t(pel.getAttribute("data-i18n-ph")));
   }
-
   var iss = document.getElementById("coIssuance"); if(iss) iss.textContent = t("co_issuance_val");
   var wEl = document.getElementById("coWarranty"); if(wEl) wEl.textContent = t("co_warranty_val");
-
   var langBtns = document.querySelectorAll("#langSwitch button");
   for(var k=0;k<langBtns.length;k++){
     langBtns[k].classList.toggle("active", langBtns[k].getAttribute("data-lang") === currentLang);
   }
-
   if(typeof refreshCatalog === "function") refreshCatalog();
   if(typeof refreshGlobeTexts === "function") refreshGlobeTexts();
   updateStatus();
@@ -924,20 +732,16 @@ function Globe(canvas, mode){
   var W=0,H=0,dpr=1,ry=-0.72,rx=0.08,zoom=1;
   var dragging=false, moved=false, lx=0, ly=0, vx=0, vy=0;
   var selected=-1, cardActive=false, hideTimer=null;
-
   var labels = {}; var cards = {};
 
   function clamp(v,a,b){ return Math.max(a, Math.min(b, v)); }
 
   function resize(){
     var r = root.getBoundingClientRect();
-    W = Math.max(1, r.width);
-    H = Math.max(1, r.height);
+    W = Math.max(1, r.width); H = Math.max(1, r.height);
     dpr = Math.min(window.devicePixelRatio || 1, 2);
-    canvas.width = Math.round(W*dpr);
-    canvas.height = Math.round(H*dpr);
-    canvas.style.width = W + "px";
-    canvas.style.height = H + "px";
+    canvas.width = Math.round(W*dpr); canvas.height = Math.round(H*dpr);
+    canvas.style.width = W + "px"; canvas.style.height = H + "px";
     ctx.setTransform(dpr,0,0,dpr,0,0);
   }
 
@@ -950,8 +754,7 @@ function Globe(canvas, mode){
   }
 
   function grid(){
-    ctx.strokeStyle = "rgba(128,82,255,.10)";
-    ctx.lineWidth = 1;
+    ctx.strokeStyle = "rgba(128,82,255,.10)"; ctx.lineWidth = 1;
     for(var lat=-60; lat<=60; lat+=30){
       var a=[]; for(var lon=-180; lon<=180; lon+=5) a.push(project(lat,lon));
       ctx.beginPath();
@@ -970,7 +773,6 @@ function Globe(canvas, mode){
     if(!worldReady || !worldBorders) return;
     ctx.save();
     ctx.beginPath(); ctx.arc(cx, cy, rad, 0, Math.PI*2); ctx.clip();
-
     for(var ri=0; ri<worldBorders.length; ri++){
       var ring = worldBorders[ri];
       var started=false, any=false;
@@ -985,14 +787,10 @@ function Globe(canvas, mode){
         } else { started = false; }
       }
       if(any){
-        ctx.fillStyle = "rgba(128,82,255,.045)";
-        ctx.fill();
-        ctx.strokeStyle = "rgba(128,82,255,.42)";
-        ctx.lineWidth = 0.75;
-        ctx.stroke();
+        ctx.fillStyle = "rgba(128,82,255,.045)"; ctx.fill();
+        ctx.strokeStyle = "rgba(128,82,255,.42)"; ctx.lineWidth = 0.75; ctx.stroke();
       }
     }
-
     if(isInteractive && selected >= 0){
       var c = countries[selected];
       var bestRing=null, bestDist=Infinity;
@@ -1023,11 +821,9 @@ function Globe(canvas, mode){
           ctx.fillStyle = feat ? "rgba(255,184,41,.28)" : "rgba(128,82,255,.30)";
           ctx.fill();
           ctx.strokeStyle = feat ? "rgba(255,210,120,.98)" : "rgba(180,150,255,.98)";
-          ctx.lineWidth = 1.4;
-          ctx.shadowBlur = 14;
+          ctx.lineWidth = 1.4; ctx.shadowBlur = 14;
           ctx.shadowColor = feat ? "rgba(255,184,41,.95)" : "rgba(128,82,255,.95)";
-          ctx.stroke();
-          ctx.shadowBlur = 0;
+          ctx.stroke(); ctx.shadowBlur = 0;
         }
       }
     }
@@ -1042,9 +838,7 @@ function Globe(canvas, mode){
         var feat = isFeatured(c[1]);
         var size = 2.0 + 3.4*p.z;
         ctx.beginPath(); ctx.arc(p.x, p.y, size, 0, Math.PI*2);
-        ctx.fillStyle = feat
-          ? "rgba(255,215,140," + (0.35 + 0.65*p.z) + ")"
-          : "rgba(255,255,255," + (0.22 + 0.78*p.z) + ")";
+        ctx.fillStyle = feat ? "rgba(255,215,140," + (0.35 + 0.65*p.z) + ")" : "rgba(255,255,255," + (0.22 + 0.78*p.z) + ")";
         ctx.shadowBlur = 12;
         ctx.shadowColor = feat ? "rgba(255,184,41,.95)" : "rgba(128,82,255,.9)";
         ctx.fill(); ctx.shadowBlur = 0;
@@ -1062,14 +856,10 @@ function Globe(canvas, mode){
     el.innerHTML = '<span class="cl-body"><span class="flag">'+c[0]+'</span><span class="code">'+c[1]+'</span></span>';
     (function(idx){
       el.addEventListener("click", function(e){
-        e.stopPropagation();
-        if(moved) return;
-        selectCountry(idx);
+        e.stopPropagation(); if(moved) return; selectCountry(idx);
       });
     })(i);
-    cardLayer.appendChild(el);
-    labels[i] = el;
-    return el;
+    cardLayer.appendChild(el); labels[i] = el; return el;
   }
 
   function makeCard(c,i){
@@ -1077,32 +867,16 @@ function Globe(canvas, mode){
     var el = document.createElement("div");
     el.className = "country-card" + (isFeatured(c[1]) ? " featured" : "");
     el.setAttribute("data-index", i);
-    el.innerHTML =
-      '<div class="cc-body">' +
-        '<div class="cc-top">' +
-          '<span class="cc-flag">'+c[0]+'</span>' +
-          '<div><div class="cc-name">'+cname(i)+'</div>' +
-          '<div class="cc-code">'+c[1]+' · telegram</div></div>' +
-        '</div>' +
-        '<div class="cc-number">'+c[1]+' '+c[2]+'</div>' +
-        '<div class="cc-bottom">' +
-          '<span class="cc-price">'+t("price_from")+' <b>'+priceOf(i)+'</b></span>' +
-          '<span class="cc-status">'+t("available")+'</span>' +
-        '</div>' +
-        '<button class="cc-go" type="button">'+t("go_to")+'</button>' +
-      '</div>';
+    el.innerHTML = '<div class="cc-body"><div class="cc-top"><span class="cc-flag">'+c[0]+'</span><div><div class="cc-name">'+cname(i)+'</div><div class="cc-code">'+c[1]+' · telegram</div></div></div><div class="cc-number">'+c[1]+' '+c[2]+'</div><div class="cc-bottom"><span class="cc-price">'+t("price_from")+' <b>'+priceOf(i)+'</b></span><span class="cc-status">'+t("available")+'</span></div><button class="cc-go" type="button">'+t("go_to")+'</button></div>';
     el.addEventListener("click", function(e){ e.stopPropagation(); });
     (function(idx){
       el.querySelector(".cc-go").addEventListener("click", function(e){
-        e.stopPropagation();
-        openCheckout(idx);
+        e.stopPropagation(); openCheckout(idx);
       });
     })(i);
     el.addEventListener("mouseenter", function(){ if(hideTimer){ clearTimeout(hideTimer); hideTimer=null; } });
     el.addEventListener("mouseleave", function(){ if(selected === i && cardActive) resetCardTimer(); });
-    cardLayer.appendChild(el);
-    cards[i] = el;
-    return el;
+    cardLayer.appendChild(el); cards[i] = el; return el;
   }
 
   function resetCardTimer(){
@@ -1110,16 +884,14 @@ function Globe(canvas, mode){
     cardActive = true;
     if(hideTimer) clearTimeout(hideTimer);
     hideTimer = setTimeout(function(){
-      hideTimer = null;
-      cardActive = false;
+      hideTimer = null; cardActive = false;
       if(cards[selected]) cards[selected].classList.remove("visible");
     }, 3000);
   }
 
   function selectCountry(i){
     if(!isInteractive) return;
-    selected = i;
-    cardActive = true;
+    selected = i; cardActive = true;
     var c = countries[i];
     var sc = document.getElementById("selectedCountry");
     var sm = document.getElementById("selectedMeta");
@@ -1127,20 +899,16 @@ function Globe(canvas, mode){
     if(sm) sm.textContent = c[1] + " · " + c[2] + " · " + t("price_from") + " " + priceOf(i);
     var sp = document.getElementById("selectPanel");
     if(sp) sp.classList.add("show");
-
     for(var k in labels){ labels[k].classList.toggle("selected", Number(k) === i); }
     for(var kk in cards){ if(Number(kk) !== i) cards[kk].classList.remove("visible"); }
-
-    makeCard(c,i);
-    resetCardTimer();
+    makeCard(c,i); resetCardTimer();
   }
 
   function hideSelected(){
     if(!isInteractive || selected < 0) return;
     if(cards[selected]) cards[selected].classList.remove("visible");
     if(labels[selected]) labels[selected].classList.remove("selected");
-    selected = -1;
-    cardActive = false;
+    selected = -1; cardActive = false;
     if(hideTimer){ clearTimeout(hideTimer); hideTimer = null; }
     var sp = document.getElementById("selectPanel");
     if(sp) sp.classList.remove("show");
@@ -1148,30 +916,23 @@ function Globe(canvas, mode){
 
   function updateLabels(){
     var active = {};
-
     for(var i=0;i<countries.length;i++){
       var c = countries[i];
       var p = project(c[3], c[4]);
       if(p.z <= 0.12) continue;
-
       active[i] = true;
       var el = makeLabel(c, i);
-
       var dx = p.x - W/2, dy = p.y - H/2;
       var len = Math.sqrt(dx*dx + dy*dy);
       var ux, uy;
       if(len < 8){ ux = 0; uy = -1; } else { ux = dx/len; uy = dy/len; }
-
       var OFFSET = 22;
-      var x = p.x + ux*OFFSET;
-      var y = p.y + uy*OFFSET;
-
+      var x = p.x + ux*OFFSET; var y = p.y + uy*OFFSET;
       setPos(el, x, y);
       el.style.zIndex = String(60 + Math.round(p.z*100));
       el.classList.add("visible");
       el.classList.toggle("selected", selected === i);
       el.classList.toggle("featured", isFeatured(c[1]));
-
       if(selected === i){
         var card = makeCard(c, i);
         if(cardActive && p.z > 0.18){
@@ -1181,12 +942,9 @@ function Globe(canvas, mode){
           setPos(card, cardX, cardY);
           card.style.zIndex = String(220 + Math.round(p.z*100));
           card.classList.add("visible");
-        } else {
-          card.classList.remove("visible");
-        }
+        } else { card.classList.remove("visible"); }
       }
     }
-
     for(var k in labels){
       if(!active[k]){
         labels[k].classList.remove("visible");
@@ -1194,7 +952,6 @@ function Globe(canvas, mode){
         if(cards[k]) cards[k].classList.remove("visible");
       }
     }
-
     var statusEl = document.getElementById("workStatus");
     if(statusEl){
       var count = 0; for(var kk in active) count++;
@@ -1211,57 +968,39 @@ function Globe(canvas, mode){
     }
     var rad = Math.min(W,H)*0.39*zoom;
     var cx = W/2, cy = H/2;
-
     var glow = ctx.createRadialGradient(cx-rad*0.28, cy-rad*0.35, rad*0.05, cx, cy, rad*1.12);
     glow.addColorStop(0,"rgba(128,82,255,.30)");
     glow.addColorStop(0.55,"rgba(50,28,96,.18)");
     glow.addColorStop(1,"rgba(0,0,0,.98)");
     ctx.beginPath(); ctx.arc(cx,cy,rad,0,Math.PI*2); ctx.fillStyle = glow; ctx.fill();
-
     ctx.save();
     ctx.beginPath(); ctx.arc(cx,cy,rad,0,Math.PI*2); ctx.clip();
-    grid();
-    drawBorders(rad, cx, cy);
-    drawPoints();
+    grid(); drawBorders(rad, cx, cy); drawPoints();
     ctx.restore();
-
     ctx.beginPath(); ctx.arc(cx,cy,rad,0,Math.PI*2);
     ctx.strokeStyle = "rgba(255,255,255,.10)"; ctx.stroke();
-
     if(isInteractive) updateLabels();
-
     requestAnimationFrame(draw);
   }
 
   function setZoom(z){ zoom = clamp(z, 0.72, 2.15); }
 
-  function onDown(e){
-    dragging = true; moved = false;
-    lx = e.clientX; ly = e.clientY;
-    vx = 0; vy = 0;
-    root.classList.add("dragging");
-    resetCardTimer();
-  }
+  function onDown(e){ dragging = true; moved = false; lx = e.clientX; ly = e.clientY; vx = 0; vy = 0; root.classList.add("dragging"); resetCardTimer(); }
   function onMove(e){
     if(!dragging) return;
     var dx = e.clientX - lx, dy = e.clientY - ly;
     if(Math.abs(dx) + Math.abs(dy) > 3) moved = true;
     lx = e.clientX; ly = e.clientY;
     var k = Math.max(0.75, zoom);
-    ry += dx*0.0055/k;
-    rx = clamp(rx + dy*0.0038/k, -0.82, 0.82);
-    vx = dx*0.0055; vy = dy*0.0038;
-    resetCardTimer();
+    ry += dx*0.0055/k; rx = clamp(rx + dy*0.0038/k, -0.82, 0.82);
+    vx = dx*0.0055; vy = dy*0.0038; resetCardTimer();
   }
   function onUp(e){
     if(!dragging) return;
-    dragging = false;
-    root.classList.remove("dragging");
+    dragging = false; root.classList.remove("dragging");
     if(moved) return;
     var tgt = e.target;
-    if(tgt && tgt.closest && (
-       tgt.closest(".country-label") || tgt.closest(".country-card") ||
-       tgt.closest(".select-panel") || tgt.closest(".zoom-ui"))) return;
+    if(tgt && tgt.closest && (tgt.closest(".country-label") || tgt.closest(".country-card") || tgt.closest(".select-panel") || tgt.closest(".zoom-ui"))) return;
     hideSelected();
   }
 
@@ -1270,35 +1009,26 @@ function Globe(canvas, mode){
     root.addEventListener("pointermove", onMove);
     root.addEventListener("pointerup", onUp);
     root.addEventListener("pointercancel", onUp);
-
     root.addEventListener("wheel", function(e){
-      e.preventDefault();
-      setZoom(zoom * (e.deltaY > 0 ? 0.91 : 1.1));
-      resetCardTimer();
+      e.preventDefault(); setZoom(zoom * (e.deltaY > 0 ? 0.91 : 1.1)); resetCardTimer();
     }, {passive:false});
-
-    var zi = document.getElementById("zoomIn");
-    var zo = document.getElementById("zoomOut");
+    var zi = document.getElementById("zoomIn"); var zo = document.getElementById("zoomOut");
     if(zi) zi.onclick = function(){ setZoom(zoom + 0.12); };
     if(zo) zo.onclick = function(){ setZoom(zoom - 0.12); };
-
     var sp = document.getElementById("selectPanel");
     if(sp) sp.addEventListener("click", function(e){ e.stopPropagation(); });
     var spb = document.getElementById("selectPanelBtn");
     if(spb) spb.addEventListener("click", function(){ if(selected >= 0) openCheckout(selected); });
-
     setInterval(function(){
       if(dragging) return;
-      ry += vx;
-      rx = clamp(rx + vy, -0.82, 0.82);
+      ry += vx; rx = clamp(rx + vy, -0.82, 0.82);
       vx *= 0.93; vy *= 0.93;
       if(Math.abs(vx) < 0.00025) vx = 0.00055;
     }, 16);
   }
 
   window.addEventListener("resize", resize);
-  resize();
-  draw();
+  resize(); draw();
 
   if(isInteractive){
     window.__globeInstance = { refreshTexts: function(){
@@ -1339,16 +1069,13 @@ function openCheckout(i){
   buy.disabled = false;
   var right = document.getElementById("coRight");
   if(right) right.classList.toggle("featured", isFeatured(c[1]));
-  co.classList.add("open");
-  co.setAttribute("aria-hidden","false");
-  co.scrollTop = 0;
-  document.body.style.overflow = "hidden";
+  co.classList.add("open"); co.setAttribute("aria-hidden","false");
+  co.scrollTop = 0; document.body.style.overflow = "hidden";
 }
 function closeCheckout(){
   var co = document.getElementById("checkout");
   if(!co) return;
-  co.classList.remove("open");
-  co.setAttribute("aria-hidden","true");
+  co.classList.remove("open"); co.setAttribute("aria-hidden","true");
   document.body.style.overflow = "";
 }
 
@@ -1356,31 +1083,23 @@ function openPayment(){
   if(checkoutIndex < 0) return;
   var i = checkoutIndex;
   var c = countries[i];
-
   document.getElementById("payFlag").textContent = c[0];
   document.getElementById("payCountry").textContent = cname(i);
   document.getElementById("payNumber").textContent = c[1] + " " + c[2];
   document.getElementById("payPrice").textContent = priceOf(i);
   var sum = document.getElementById("paySummary");
   if(sum) sum.classList.toggle("featured", isFeatured(c[1]));
-
-  updateStarsLine();
-  updatePaymentAmounts();
-
+  updateStarsLine(); updatePaymentAmounts();
   var pay = document.getElementById("payment");
-  pay.classList.add("open");
-  pay.setAttribute("aria-hidden","false");
-  pay.scrollTop = 0;
-  document.body.style.overflow = "hidden";
-
+  pay.classList.add("open"); pay.setAttribute("aria-hidden","false");
+  pay.scrollTop = 0; document.body.style.overflow = "hidden";
   var co = document.getElementById("checkout");
   if(co){ co.classList.remove("open"); co.setAttribute("aria-hidden","true"); }
 }
 function closePayment(){
   var pay = document.getElementById("payment");
   if(!pay) return;
-  pay.classList.remove("open");
-  pay.setAttribute("aria-hidden","true");
+  pay.classList.remove("open"); pay.setAttribute("aria-hidden","true");
   document.body.style.overflow = "";
 }
 
@@ -1390,15 +1109,9 @@ function updateStarsLine(){
   var rate = document.getElementById("payStarsRate");
   if(rate) rate.textContent = "1.7 ₽ / ⭐";
   if(!line) return;
-  if(checkoutIndex < 0){
-    line.textContent = "@exec_me_shop";
-    if(amountEl) amountEl.textContent = "—";
-    return;
-  }
+  if(checkoutIndex < 0){ line.textContent = "@exec_me_shop"; if(amountEl) amountEl.textContent = "—"; return; }
   var stars = starsFor(checkoutIndex);
-  if(amountEl){
-    amountEl.innerHTML = "≈ " + stars + " <span>STARS</span>";
-  }
+  if(amountEl){ amountEl.innerHTML = "≈ " + stars + " <span>STARS</span>"; }
   line.textContent = "@exec_me_shop";
 }
 
@@ -1410,20 +1123,12 @@ function bindCopyButtons(){
         e.stopPropagation();
         var val = btn.getAttribute("data-copy");
         var done = function(){
-          btn.textContent = t("pay_copied");
-          btn.classList.add("copied");
-          setTimeout(function(){
-            btn.textContent = t("pay_copy");
-            btn.classList.remove("copied");
-          }, 1400);
+          btn.textContent = t("pay_copied"); btn.classList.add("copied");
+          setTimeout(function(){ btn.textContent = t("pay_copy"); btn.classList.remove("copied"); }, 1400);
         };
         if(navigator.clipboard && navigator.clipboard.writeText){
-          navigator.clipboard.writeText(val).then(done).catch(function(){
-            fallbackCopy(val); done();
-          });
-        } else {
-          fallbackCopy(val); done();
-        }
+          navigator.clipboard.writeText(val).then(done).catch(function(){ fallbackCopy(val); done(); });
+        } else { fallbackCopy(val); done(); }
       });
     })(buttons[i]);
   }
@@ -1438,13 +1143,9 @@ function bindCopyButtons(){
 function fallbackCopy(text){
   try{
     var ta = document.createElement("textarea");
-    ta.value = text;
-    ta.style.position = "fixed";
-    ta.style.top = "-1000px";
-    document.body.appendChild(ta);
-    ta.select();
-    document.execCommand("copy");
-    document.body.removeChild(ta);
+    ta.value = text; ta.style.position = "fixed"; ta.style.top = "-1000px";
+    document.body.appendChild(ta); ta.select();
+    document.execCommand("copy"); document.body.removeChild(ta);
   }catch(e){}
 }
 
@@ -1463,13 +1164,11 @@ function refreshCatalog(){
       var hay = (cname(i) + " " + countries[i][1]).toLowerCase();
       if(hay.indexOf(q) < 0) continue;
     }
-    catGrid.appendChild(makeTile(i));
-    count++;
+    catGrid.appendChild(makeTile(i)); count++;
   }
   if(count === 0){
     var emp = document.createElement("div");
-    emp.className = "catalog-empty";
-    emp.textContent = t("empty");
+    emp.className = "catalog-empty"; emp.textContent = t("empty");
     catGrid.appendChild(emp);
   }
 }
@@ -1479,18 +1178,7 @@ function makeTile(i){
   var feat = isFeatured(c[1]);
   var tile = document.createElement("article");
   tile.className = "country-tile" + (feat ? " featured" : "");
-  tile.innerHTML =
-    '<div class="ct-top">' +
-      '<div class="ct-flag">'+c[0]+'</div>' +
-      '<div><div class="ct-name">'+cname(i)+'</div>' +
-      '<div class="ct-code">'+c[1]+' · telegram</div></div>' +
-    '</div>' +
-    '<div class="ct-number">'+c[1]+' '+c[2]+'</div>' +
-    '<div class="ct-bottom">' +
-      '<span class="ct-price">'+t("price_from")+' <b>'+priceOf(i)+'</b></span>' +
-      '<span class="ct-status">'+t("available")+'</span>' +
-    '</div>' +
-    '<button class="ct-go" type="button">'+t("go_to")+'</button>';
+  tile.innerHTML = '<div class="ct-top"><div class="ct-flag">'+c[0]+'</div><div><div class="ct-name">'+cname(i)+'</div><div class="ct-code">'+c[1]+' · telegram</div></div></div><div class="ct-number">'+c[1]+' '+c[2]+'</div><div class="ct-bottom"><span class="ct-price">'+t("price_from")+' <b>'+priceOf(i)+'</b></span><span class="ct-status">'+t("available")+'</span></div><button class="ct-go" type="button">'+t("go_to")+'</button>';
   (function(idx){
     tile.querySelector(".ct-go").addEventListener("click", function(){ openCheckout(idx); });
   })(i);
@@ -1506,14 +1194,12 @@ function init(){
       setLang(btn.getAttribute("data-lang"));
     });
   }
-
   catGrid = document.getElementById("catalogGrid");
   catSearchEl = document.getElementById("catalogSearch");
   catFilterEl = document.getElementById("catalogFilter");
   if(catSearchEl){
     catSearchEl.addEventListener("input", function(){
-      catSearch.query = catSearchEl.value;
-      refreshCatalog();
+      catSearch.query = catSearchEl.value; refreshCatalog();
     });
   }
   if(catFilterEl){
@@ -1527,7 +1213,6 @@ function init(){
     });
   }
   refreshCatalog();
-
   var cb = document.getElementById("checkoutBack");
   if(cb) cb.addEventListener("click", closeCheckout);
   document.addEventListener("keydown", function(e){
@@ -1535,25 +1220,19 @@ function init(){
   });
   var buyBtn = document.getElementById("coBuy");
   if(buyBtn) buyBtn.addEventListener("click", function(){ openPayment(); });
-
   var pb = document.getElementById("paymentBack");
   if(pb) pb.addEventListener("click", function(){
     var pay = document.getElementById("payment");
-    pay.classList.remove("open");
-    pay.setAttribute("aria-hidden","true");
+    pay.classList.remove("open"); pay.setAttribute("aria-hidden","true");
     if(checkoutIndex >= 0){
       var co = document.getElementById("checkout");
-      co.classList.add("open");
-      co.setAttribute("aria-hidden","false");
-      co.scrollTop = 0;
+      co.classList.add("open"); co.setAttribute("aria-hidden","false"); co.scrollTop = 0;
     }
   });
   bindCopyButtons();
-
   loadBorders();
   Globe(document.getElementById("exampleCanvas"), "preview");
   Globe(document.getElementById("interactiveCanvas"), "interactive");
-
   applyI18n();
   updateStarsLine();
   updatePaymentAmounts();
@@ -1564,12 +1243,7 @@ window.refreshGlobeTexts = function(){
   if(window.__globeInstance && window.__globeInstance.refreshTexts) window.__globeInstance.refreshTexts();
 };
 
-if(document.readyState === "loading"){
-  document.addEventListener("DOMContentLoaded", init);
-} else {
-  init();
-}
-
+if(document.readyState === "loading"){ document.addEventListener("DOMContentLoaded", init); } else { init(); }
 })();
 </script>
 
